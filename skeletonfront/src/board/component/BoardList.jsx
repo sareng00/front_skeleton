@@ -2,10 +2,23 @@ import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { boardList } from '../../../../skeletonserver/board/boardDAO'
+
 
 
 
 const BoardList = () => {
+  const navigate = useNavigate()
+
+  cosnt [boardList, setBoardList] = useState({
+    status:"", messahe: "", data:[]
+  })
+
+  const getBoardList = useCallback(async () => {
+    const resp = await axios.get('http://localhost:8000/boards/boardList')
+    setBoardList(resp.data)
+  })
+
   return (
     <main id="main">
 
