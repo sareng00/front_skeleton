@@ -62,13 +62,15 @@ const BoardList = () => {
                 </tr>
               </thead>
               <tbody>
+                {boardList.data.map((board) => (
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{board.id}</td>
+                  <td>{board.title}</td>
+                  <td>{board.name}</td>
+                  <td>{board.createAt}</td>
+                  <td>{board.cnt}</td>
                 </tr>
+                ))}
               </tbody>
               <tfoot>
                 <tr>
