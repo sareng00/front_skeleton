@@ -3,10 +3,12 @@ const router = express.Router()
 const userDAO = require('./userDAO')
 
 
-router.get('/signup', async (req, res, next) => {
+router.post('/signup', async (req, res, next) => {
   console.log('user router, signup..........')
-  userDAO.signup({ name: '홍길동', email: 'hong@hong.com', password: '1234' }, (resp) => {
-    res.send('success')
+
+  const data = req.body
+  userDAO.signup(data, (resp) => {
+    res.send(resp)
   })
 })
 

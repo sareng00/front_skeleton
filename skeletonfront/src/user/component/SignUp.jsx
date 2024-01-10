@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const SignUp = () => {
+
+  const navigate = useNavigate()
+
+  const [date,setDate] = useState({name:'', email:'', password:''})
+
+  const changeDate = useCallback((e) => {
+    setDate((date) => ({...data, [e.target.name]: e.target.value}))
+  }, [])
+
+  const signup = useCallback(async (e) => {
+    e.preventDefault()
+
+    const resp = await axios.post('http://localhost:8000/users/signup', data)
+    if(resp.data.status ===500) window.alert('사용자가 존재합니다.')
+
+    else navigate('/')
+  }, [data, navigate])
   return (
     <main id="main">
 
@@ -29,12 +48,38 @@ const SignUp = () => {
       </div>
     </section>
 
+    <section className="intro-single">
+      <div className="container">
+      <form className="row">
+          <div className="col-sm12 position-relative form-group mb-3">
+            <label htmlFor="email" className="form-label">Email</label>
+            <input type="text" className="form-control" id="email" maane="email" 
+            value={data.email} onChange={changeDate}/>
+          </div>
+          <div className="col-sm12 position-relative form-group mb-3">
+            <label htmlFor="password" className="form-label">Password</label>
+            <input type="password" className="form-control" id="password" maane="password"
+            value={data.password} onChange={changeDate}/>
+          </div>
+          <div className="col-sm12 position-relative form-group mb-3">
+            <label htmlFor="name" className="form-label">Name</label>
+            <input type="text" className="form-control" id="name" maane="name"
+            value={data.name} onChange={changeDate}/>
+          </div>
+          <div className="col-sm12 position-relative form-group mb-3">
+            <button type="submit" className="btn btn-danger btr-sm" onClick={signup}>send</button>
+            <button type="reset" className="btn btn-primary btn-sm">reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
     <section className="section-about">
       <div className="container">
         <div className="row">
           <div className="col-sm-12 position-relative">
             <div className="about-img-box">
-              <img src="images/slide-about-1.jpg" alt="" className="img-fluid"/>
+              <img src="/images/slide-about-1.jpg" alt="" className="img-fluid"/>
             </div>
             <div className="sinse-box">
               <h3 className="sinse-title">EstateAgency
