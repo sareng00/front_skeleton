@@ -1,0 +1,7 @@
+npm init vite skeletonfront -- --template react
+cd skeletonfront
+npm install
+
+npm install axios bootstrap react-router react-router-dom 
+
+npm run dev

@@ -9,6 +9,7 @@ const nunjucks = require('nunjucks')
 require('dotenv').config()
 
 const homeRouter = require('./home/homerouter')
+const userRouter = require('./user/userRouter')
 
 const app = express()
 
@@ -28,7 +29,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 app.use('/', homeRouter)
-
+app.use('/users', userRouter)
 
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`)
