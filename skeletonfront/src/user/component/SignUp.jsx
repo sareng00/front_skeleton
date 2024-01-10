@@ -7,10 +7,10 @@ const SignUp = () => {
 
   const navigate = useNavigate()
 
-  const [date,setDate] = useState({name:'', email:'', password:''})
+  const [data,setData] = useState({name:'', email:'', password:''})
 
-  const changeDate = useCallback((e) => {
-    setDate((date) => ({...data, [e.target.name]: e.target.value}))
+  const changeData = useCallback((e) => {
+    setData((data) => ({...data, [e.target.name]: e.target.value}))
   }, [])
 
   const signup = useCallback(async (e) => {
@@ -53,18 +53,18 @@ const SignUp = () => {
       <form className="row">
           <div className="col-sm12 position-relative form-group mb-3">
             <label htmlFor="email" className="form-label">Email</label>
-            <input type="text" className="form-control" id="email" maane="email" 
-            value={data.email} onChange={changeDate}/>
+            <input type="text" className="form-control" id="email" name="email" 
+            value={data.email} onChange={changeData}/>
           </div>
           <div className="col-sm12 position-relative form-group mb-3">
             <label htmlFor="password" className="form-label">Password</label>
-            <input type="password" className="form-control" id="password" maane="password"
-            value={data.password} onChange={changeDate}/>
+            <input type="password" className="form-control" id="password" name="password"
+            value={data.password} onChange={changeData}/>
           </div>
           <div className="col-sm12 position-relative form-group mb-3">
             <label htmlFor="name" className="form-label">Name</label>
-            <input type="text" className="form-control" id="name" maane="name"
-            value={data.name} onChange={changeDate}/>
+            <input type="text" className="form-control" id="name" name="name"
+            value={data.name} onChange={changeData}/>
           </div>
           <div className="col-sm12 position-relative form-group mb-3">
             <button type="submit" className="btn btn-danger btr-sm" onClick={signup}>send</button>

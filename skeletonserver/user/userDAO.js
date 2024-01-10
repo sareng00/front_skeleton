@@ -33,7 +33,39 @@ const userDAO = {
     } finally {
       if (conn !== null) conn.release()
     }
+  },
+  login: async (item, callback) => {
+    const {email, password} = item
+    let conn = null
+    try{
+      console.log('00')
+      conn= await getPool().getConnection()
+      console.log('11')
+      const [user] = await conn.query(sql.checkId, [email])
+      console.log('22', user)
+      if(!user[0]){
+        callback({status:500, message:'아이디, 패스워드를 확인해 주세요.'})
+      }else{
+        console.log('33',password, user[0].password)
+        bcrypt.compare(password, user[0].password, async (error,result) => {
+          if(error){
+            callback({status: 500, message: '아이디, 패스워드를 확인해 주세요'})
+          }else if(result){
+            console.log('44')
+            callback({staus: 200, message: 'OK',
+              data:{name: user[0].name}, email: user[0].email})
+          }else {
+            callback({status:500, message:'아이디, 패스워드를 확인해 주세요'})
+          }
+        })
+      }
+    }catch(e){
+      return {status:500, message: '로그인 실패', error:error}
+    }finally{
+      if(conn !== null) conn.release()
+    }
   }
 }
+
 
 module.exports = userDAO
