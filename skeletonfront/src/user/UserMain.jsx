@@ -1,6 +1,7 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 import SignUp from './component/SignUp'
-import SignIn from './component/SignIn'
+import SignIn from "./component/SignIn";
+
 
 const UserMain = () => {
   return (
@@ -13,5 +14,4 @@ const UserMain = () => {
     </div>
   )
 }
-
 export default UserMain

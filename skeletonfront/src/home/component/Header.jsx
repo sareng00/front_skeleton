@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div>
+      {/* !-- ======= Header/Navbar ======= -->*/}
       <nav className="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
         <div className="container">
           <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,15 +22,15 @@ const Header = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link " to="/user/signup">Signup</Link>
+                <Link className="nav-link " to="/user/signup">SignUp</Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link " to="/user/signin">Login</Link>
+                <Link className="nav-link "to="/user/signin">Login</Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link " to="/board/BoardList">Board</Link>
+                <Link className="nav-link " to="/board/list">Board</Link>
               </li>
 
               <li className="nav-item dropdown">
@@ -53,7 +54,9 @@ const Header = () => {
 
         </div>
       </nav>
+      {/* <!-- End Header/Navbar --> */}
     </div>
   )
 }
+
 export default Header

@@ -1,22 +1,21 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from "react-router-dom";
 
-import Header from './home/component/Header.jsx'
-import Footer from './home/component/Footer.jsx'
-import HomeMain from './home/HomeMain.jsx'
-import UserMain from './user/UserMain'
-import BoardMain from './board/BoardMain.jsx'
+import Header from './home/component/Header'
+import Footer from './home/component/Footer'
+import HomeMain from "./home/HomeMain";
+import UsreMain from "./user/UserMain"
+import BoardMain from "./board/BoardMain";
 
 const App = () => {
   return (
     <div>
-      <Header/>
-      
+      <Header />
       <Routes>
-        <Route path='/' element={<HomeMain />} />
-        <Route path='/user/*' element={<UserMain />} />
-        <Route path='/board/*' element={<BoardMain />} />
+        <Route path="/" element={<HomeMain />} />
+        <Route path="/user/*" element={<UsreMain />} />
+        <Route path='/board/*' element={<BoardMain/>}/>
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

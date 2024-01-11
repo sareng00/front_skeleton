@@ -1,9 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
     <div>
+      {/* <!-- ======= Footer ======= --> */}
       <section className="section-footer">
         <div className="container">
           <div className="row">
@@ -39,22 +40,22 @@ const Footer = () => {
                   <div className="w-body-a">
                     <ul className="list-unstyled">
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Site Map</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Site Map</Link>
                       </li>
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Legal</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Legal</Link>
                       </li>
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Agent Admin</Link>
                       </li>
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Careers</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Careers</Link>
                       </li>
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Affiliate</Link>
                       </li>
                       <li className="item-list-a">
-                        <i className="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
+                        <i className="bi bi-chevron-right"></i> <Link href="#">Privacy Policy</Link>
                       </li>
                     </ul>
                   </div>
@@ -69,22 +70,22 @@ const Footer = () => {
                 <div className="w-body-a">
                   <ul className="list-unstyled">
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">Venezuela</Link>
                     </li>
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">China</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">China</Link>
                     </li>
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">Hong Kong</Link>
                     </li>
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">Argentina</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">Argentina</Link>
                     </li>
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">Singapore</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">Singapore</Link>
                     </li>
                     <li className="item-list-a">
-                      <i className="bi bi-chevron-right"></i> <a href="#">Philippines</a>
+                      <i className="bi bi-chevron-right"></i> <Link href="#">Philippines</Link>
                     </li>
                   </ul>
                 </div>
@@ -147,12 +148,14 @@ const Footer = () => {
                 </p>
               </div>
               <div className="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <Link href="https://bootstrapmade.com/">BootstrapMade</Link>
               </div>
             </div>
           </div>
         </div>
       </footer>
+      {/* <!-- End  Footer --> */}
+
     </div>
   )
 }

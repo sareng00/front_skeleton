@@ -1,9 +1,9 @@
 import Home from "./component/Home";
 
-const HomeMain = () => {
-  return (
+const HomeMain=()=>{
+  return(
     <div>
-      <Home />
+      <Home/>
     </div>
   )
 }
